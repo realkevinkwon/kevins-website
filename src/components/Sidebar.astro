@@ -13,12 +13,12 @@ const textLinks: { label: string; href: string }[] = [
     <p class="text-xl mb-4">
         software engineer
     </p>
-    <div class="my-4">
-        <a href="mailto:kevinkwonmail@gmail.com" target="_blank">email</a>
-        <a href="https://github.com/realkevinkwon" target="_blank">github</a>
-        <a href="https://linkedin.com/in/realkevinkwon" target="_blank">linkedin</a>
+    <div class="my-4 text-sm">
+        <a href="mailto:kevinkwonmail@gmail.com" target="_blank" class="hover:underline">email</a>
+        <a href="https://github.com/realkevinkwon" target="_blank" class="hover:underline">github</a>
+        <a href="https://linkedin.com/in/realkevinkwon" target="_blank" class="hover:underline">linkedin</a>
     </div>
-    <div class="flex flex-col space-y-1 my-12">
+    <div class="flex flex-col space-y-1 my-8">
         <ul>
             {
                 textLinks.map(({ label, href }) => (
@@ -32,6 +32,7 @@ const textLinks: { label: string; href: string }[] = [
                                         Astro.url.pathname === href ||
                                         (href !== '/' && Astro.url.pathname.startsWith(href)),
                                 },
+                                'hover:underline'
                             ]}
                             href={href}
                         >
@@ -46,7 +47,6 @@ const textLinks: { label: string; href: string }[] = [
 
 <style>
     .link.active {
-        text-decoration: underline;
-        font-weight: 500;
+        font-weight: 600;
     }
 </style>
