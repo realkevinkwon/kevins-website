@@ -1,0 +1,52 @@
+---
+const textLinks: { label: string; href: string }[] = [
+    { label: 'about', href: '/' },
+    { label: 'projects', href: '/projects' },
+    { label: 'work experience', href: '/work' },
+]
+---
+
+<div class="flex flex-col w-1/4">
+    <p class="text-4xl">
+        kevin kwon 
+    </p>
+    <p class="text-xl mb-4">
+        software engineer
+    </p>
+    <div class="my-4">
+        <a href="mailto:kevinkwonmail@gmail.com" target="_blank">email</a>
+        <a href="https://github.com/realkevinkwon" target="_blank">github</a>
+        <a href="https://linkedin.com/in/realkevinkwon" target="_blank">linkedin</a>
+    </div>
+    <div class="flex flex-col space-y-1 my-12">
+        <ul>
+            {
+                textLinks.map(({ label, href }) => (
+                    <li>
+                        <a
+                            aria-current={Astro.url.pathname === href}
+                            class:list={[
+                                'link',
+                                {
+                                    active:
+                                        Astro.url.pathname === href ||
+                                        (href !== '/' && Astro.url.pathname.startsWith(href)),
+                                },
+                            ]}
+                            href={href}
+                        >
+                            {label}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</div>
+
+<style>
+    .link.active {
+        text-decoration: underline;
+        font-weight: 500;
+    }
+</style>
