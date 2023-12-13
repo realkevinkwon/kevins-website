@@ -14,7 +14,7 @@ const workEntries = await getCollection('work');
 				<div>
 					<div class="hidden lg:flex lg:flex-col mb-2">
 						<div class="flex justify-between">
-							<p class="font-medium">{workEntry.data.title}</p>
+							<p class="font-semibold">{workEntry.data.title}</p>
 							<p>{workEntry.data.location}</p>
 						</div>
 						<div class="flex justify-between">
@@ -24,7 +24,7 @@ const workEntries = await getCollection('work');
 					</div>
 					<div class="flex flex-col lg:hidden space-y-2 mb-2">
 						<div class="flex flex-col justify-between">
-							<p class="font-medium">{workEntry.data.title}</p>
+							<p class="font-semibold">{workEntry.data.title}</p>
 							<p>{workEntry.data.employer}</p>
 						</div>
 						<div class="flex flex-col justify-between">

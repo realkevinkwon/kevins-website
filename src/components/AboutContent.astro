@@ -1,4 +1,17 @@
 ---
+const skills = [
+	"c",
+	"python",
+	"java",
+	"javascript / typescript",
+	"data structures and algorithms",
+	"computer networks",
+	"operating systems",
+]
+const hobbies = [
+	"rock climbing",
+	"music (piano, trumpet, and others)",
+]
 ---
 
 <div class="w-3/4">
@@ -6,7 +19,7 @@
 	<div class="hidden lg:flex lg:flex-col">
 		<div class="space-y-2 lg:space-y-0 mb-2">
 			<div class="flex flex-col lg:flex-row justify-between">
-				<p class="font-medium">purdue university</p>
+				<p class="font-bold">purdue university</p>
 				<p>west lafayette, in</p>
 			</div>
 			<div class="flex flex-col lg:flex-row justify-between">
@@ -26,9 +39,9 @@
 		</div>
 	</div>
 	<div class="flex flex-col lg:hidden">
-		<div class="space-y-2 lg:space-y-0 mb-2">
+		<div class="space-y-4 lg:space-y-0 mb-4">
 			<div class="flex flex-col lg:flex-row justify-between">
-				<p class="font-medium">purdue university</p>
+				<p class="font-bold">purdue university</p>
 				<p>bachelor of science in computer engineering</p>
 			</div>
 			<div class="flex flex-col lg:flex-row justify-between">
@@ -50,21 +63,27 @@
 	<div>
 		<p class="text-xl pt-8 pb-2">skills</p>
 		<div class="text-sm">
-			<p>- c</p>
-			<p>- python</p>
-			<p>- java</p>
-			<p>- javascript/typescript</p>
-			<p>- data structures</p>
-			<p>- algorithms</p>
-			<p>- computer networks</p>
-			<p>- operating systems</p>
+			{
+				skills.map(skill => (
+					<div class="flex">
+						<p class="pr-2">-</p>
+						<p>{skill}</p>
+					</div>
+				))
+			}
 		</div>
 	</div>
 	<div>
 		<p class="text-xl pt-8 pb-2">hobbies</p>
 		<div class="text-sm">
-			<p>- rock climbing</p>
-			<p>- music (piano, trumpet, and others)</p>
+			{
+				hobbies.map(hobby => (
+					<div class="flex">
+						<p class="pr-2">-</p>
+						<p>{hobby}</p>
+					</div>
+				))
+			}
 		</div>
 	</div>
 </div>
