@@ -1,10 +1,39 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Sidebar from '../components/Sidebar.astro';
-import ProjectsContent from '../components/ProjectsContent.astro';
+import { getCollection } from 'astro:content';
+
+const projectEntries = await getCollection('projects');
 ---
 
 <Layout title="projects">
 	<Sidebar />
-	<ProjectsContent />
+	<div class="w-3/4 space-y-8">
+		{
+			projectEntries.map(projectEntry => (
+				<div>
+					<div class="flex justify-between">
+						<a 
+							href={projectEntry.data.href}
+							target="_blank"
+							class="hover:underline font-medium"
+						>
+							{projectEntry.data.title}
+						</a>
+						<p>{projectEntry.data.location}</p>
+					</div>
+					<div class="flex justify-between mb-2">
+						<p>{projectEntry.data.employer}</p>
+						<p>{projectEntry.data.date}</p>
+					</div>
+					<div class="flex">
+						<p class="pr-2">-</p>
+						<p class="text-sm">
+							handled customer service interactions including customer transactions and party reservations
+						</p>
+					</div>
+				</div>
+			))
+		}
+	</div>
 </Layout>

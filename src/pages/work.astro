@@ -1,10 +1,33 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Sidebar from '../components/Sidebar.astro';
-import WorkContent from '../components/WorkContent.astro';
+import { getCollection } from 'astro:content';
+
+const workEntries = await getCollection('work');
 ---
 
 <Layout title="work">
 	<Sidebar />
-	<WorkContent />
+	<div class="w-3/4 space-y-8">
+		{
+			workEntries.map(workEntry => (
+				<div>
+					<div class="flex justify-between">
+						<p class="font-medium">{workEntry.data.title}</p>
+						<p>{workEntry.data.location}</p>
+					</div>
+					<div class="flex justify-between mb-2">
+						<p>{workEntry.data.employer}</p>
+						<p>{workEntry.data.date}</p>
+					</div>
+					<div class="flex">
+						<p class="pr-2">-</p>
+						<p class="text-sm">
+							handled customer service interactions including customer transactions and party reservations
+						</p>
+					</div>
+				</div>
+			))
+		}
+	</div>
 </Layout>
