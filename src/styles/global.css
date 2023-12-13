@@ -1,0 +1,22 @@
+html {
+	font-family: "Roboto Mono Variable", sans-serif;
+	font-weight: 400;
+    color: #292524;
+	background: #f5f5f4;
+}
+html.dark {
+    font-family: "Roboto Mono Variable", sans-serif;
+    color: #f5f5f4;
+    background: #292524;
+}
+
+.test-a {
+	outline-width: 4px;
+	outline-color: rgb(255, 121, 121);
+	outline-style: dotted;
+}
+.test-b {
+	outline-width: 4px;
+	outline-color: rgb(87, 129, 255);
+	outline-style: dotted;
+}

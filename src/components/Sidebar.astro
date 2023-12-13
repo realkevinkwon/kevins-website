@@ -1,4 +1,6 @@
 ---
+import ThemeIcon from './ThemeIcon.astro';
+
 const textLinks: { label: string; href: string }[] = [
     { label: 'about', href: '/' },
     { label: 'projects', href: '/projects' },
@@ -17,6 +19,7 @@ const textLinks: { label: string; href: string }[] = [
     <p class="text-xl mb-4">
         software engineer
     </p>
+    <ThemeIcon />
     <div class="flex flex-col my-4 text-sm">
         <a
             href="mailto:kevinkwonmail@gmail.com"
