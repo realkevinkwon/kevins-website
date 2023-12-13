@@ -12,13 +12,25 @@ const workEntries = await getCollection('work');
 		{
 			workEntries.map(workEntry => (
 				<div>
-					<div class="flex justify-between">
-						<p class="font-medium">{workEntry.data.title}</p>
-						<p>{workEntry.data.location}</p>
+					<div class="hidden lg:flex lg:flex-col mb-2">
+						<div class="flex justify-between">
+							<p class="font-medium">{workEntry.data.title}</p>
+							<p>{workEntry.data.location}</p>
+						</div>
+						<div class="flex justify-between">
+							<p>{workEntry.data.employer}</p>
+							<p>{workEntry.data.date}</p>
+						</div>
 					</div>
-					<div class="flex justify-between mb-2">
-						<p>{workEntry.data.employer}</p>
-						<p>{workEntry.data.date}</p>
+					<div class="flex flex-col lg:hidden space-y-2 mb-2">
+						<div class="flex flex-col justify-between">
+							<p class="font-medium">{workEntry.data.title}</p>
+							<p>{workEntry.data.employer}</p>
+						</div>
+						<div class="flex flex-col justify-between">
+							<p>{workEntry.data.location}</p>
+							<p>{workEntry.data.date}</p>
+						</div>
 					</div>
 					{
 						workEntry.data.bullets.map(bullet => (

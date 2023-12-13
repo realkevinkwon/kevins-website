@@ -12,19 +12,37 @@ const projectEntries = await getCollection('projects');
 		{
 			projectEntries.map(projectEntry => (
 				<div>
-					<div class="flex justify-between">
-						<a 
-							href={projectEntry.data.href}
-							target="_blank"
-							class="hover:underline font-medium"
-						>
-							{projectEntry.data.title}
-						</a>
-						<p>{projectEntry.data.location}</p>
+					<div class="hidden lg:flex lg:flex-col mb-2">
+						<div class="flex justify-between">
+							<a 
+								href={projectEntry.data.href}
+								target="_blank"
+								class="hover:underline font-medium"
+							>
+								{projectEntry.data.title}
+							</a>
+							<p>{projectEntry.data.location}</p>
+						</div>
+						<div class="flex justify-between">
+							<p>{projectEntry.data.employer}</p>
+							<p>{projectEntry.data.date}</p>
+						</div>
 					</div>
-					<div class="flex justify-between mb-2">
-						<p>{projectEntry.data.employer}</p>
-						<p>{projectEntry.data.date}</p>
+					<div class="flex flex-col lg:hidden space-y-2 mb-2">
+						<div class="flex flex-col justify-between">
+							<a 
+								href={projectEntry.data.href}
+								target="_blank"
+								class="hover:underline font-medium"
+							>
+								{projectEntry.data.title}
+							</a>
+							<p>{projectEntry.data.employer}</p>
+						</div>
+						<div class="flex flex-col justify-between">
+							<p>{projectEntry.data.location}</p>
+							<p>{projectEntry.data.date}</p>
+						</div>
 					</div>
 					{
 						projectEntry.data.bullets.map(bullet => (
