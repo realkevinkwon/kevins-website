@@ -8,11 +8,11 @@ const projectEntries = await getCollection('projects');
 
 <Layout title="projects">
 	<Sidebar />
-	<div class="w-3/4 space-y-8">
+	<div class="w-3/4 space-y-10">
 		{
 			projectEntries.map(projectEntry => (
 				<div>
-					<div class="hidden lg:flex lg:flex-col mb-2">
+					<div class="hidden lg:flex lg:flex-col mb-4">
 						<div class="flex justify-between">
 							<a 
 								href={projectEntry.data.href}
@@ -28,7 +28,7 @@ const projectEntries = await getCollection('projects');
 							<p>{projectEntry.data.date}</p>
 						</div>
 					</div>
-					<div class="flex flex-col lg:hidden space-y-2 mb-2">
+					<div class="flex flex-col lg:hidden space-y-4 mb-4">
 						<div class="flex flex-col justify-between">
 							<a 
 								href={projectEntry.data.href}

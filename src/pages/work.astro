@@ -8,11 +8,11 @@ const workEntries = await getCollection('work');
 
 <Layout title="work">
 	<Sidebar />
-	<div class="w-3/4 space-y-8">
+	<div class="w-3/4 space-y-10">
 		{
 			workEntries.map(workEntry => (
 				<div>
-					<div class="hidden lg:flex lg:flex-col mb-2">
+					<div class="hidden lg:flex lg:flex-col mb-4">
 						<div class="flex justify-between">
 							<p class="font-semibold">{workEntry.data.title}</p>
 							<p>{workEntry.data.location}</p>
@@ -22,7 +22,7 @@ const workEntries = await getCollection('work');
 							<p>{workEntry.data.date}</p>
 						</div>
 					</div>
-					<div class="flex flex-col lg:hidden space-y-2 mb-2">
+					<div class="flex flex-col lg:hidden space-y-4 mb-4">
 						<div class="flex flex-col justify-between">
 							<p class="font-semibold">{workEntry.data.title}</p>
 							<p>{workEntry.data.employer}</p>
