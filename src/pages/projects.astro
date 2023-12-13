@@ -26,12 +26,16 @@ const projectEntries = await getCollection('projects');
 						<p>{projectEntry.data.employer}</p>
 						<p>{projectEntry.data.date}</p>
 					</div>
-					<div class="flex">
-						<p class="pr-2">-</p>
-						<p class="text-sm">
-							handled customer service interactions including customer transactions and party reservations
-						</p>
-					</div>
+					{
+						projectEntry.data.bullets.map(bullet => (
+							<div class="flex">
+								<p class="pr-2">-</p>
+								<p class="text-sm">
+									{bullet}
+								</p>
+							</div>
+						))
+					}
 				</div>
 			))
 		}
