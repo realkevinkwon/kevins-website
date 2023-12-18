@@ -25,7 +25,7 @@ const projectEntries = await getCollection('projects');
 						</div>
 						<div class="flex justify-between">
 							<p>{projectEntry.data.employer}</p>
-							<p>{projectEntry.data.date}</p>
+							<p>{projectEntry.data.dateStart}&mdash;{projectEntry.data.dateEnd}</p>
 						</div>
 					</div>
 					<div class="flex flex-col lg:hidden space-y-4 mb-4">
@@ -41,7 +41,7 @@ const projectEntries = await getCollection('projects');
 						</div>
 						<div class="flex flex-col justify-between">
 							<p>{projectEntry.data.location}</p>
-							<p>{projectEntry.data.date}</p>
+							<p>{projectEntry.data.dateStart}&mdash;{projectEntry.data.dateEnd}</p>
 						</div>
 					</div>
 					{

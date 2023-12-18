@@ -19,7 +19,7 @@ const workEntries = await getCollection('work');
 						</div>
 						<div class="flex justify-between">
 							<p>{workEntry.data.employer}</p>
-							<p>{workEntry.data.date}</p>
+							<p>{workEntry.data.dateStart}&mdash;{workEntry.data.dateEnd}</p>
 						</div>
 					</div>
 					<div class="flex flex-col lg:hidden space-y-4 mb-4">
@@ -29,7 +29,7 @@ const workEntries = await getCollection('work');
 						</div>
 						<div class="flex flex-col justify-between">
 							<p>{workEntry.data.location}</p>
-							<p>{workEntry.data.date}</p>
+							<p>{workEntry.data.dateStart}&mdash;{workEntry.data.dateEnd}</p>
 						</div>
 					</div>
 					{

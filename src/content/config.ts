@@ -6,7 +6,8 @@ const workCollection = defineCollection({
         title: z.string(),
         location: z.string(),
         employer: z.string(),
-        date: z.string(),
+        dateStart: z.string(),
+        dateEnd: z.string(),
         bullets: z.array(z.string()),
     })
 
@@ -18,7 +19,8 @@ const projectCollection = defineCollection({
         title: z.string(),
         location: z.string(),
         employer: z.string(),
-        date: z.string(),
+        dateStart: z.string(),
+        dateEnd: z.string(),
         bullets: z.array(z.string()),
     })
 
