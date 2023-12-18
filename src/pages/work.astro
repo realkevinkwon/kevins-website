@@ -10,7 +10,7 @@ const workEntries = await getCollection('work');
 	<Sidebar />
 	<div class="w-3/4 space-y-10">
 		{
-			workEntries.toReversed().map(workEntry => (
+			workEntries.slice().reverse().map(workEntry => (
 				<div>
 					<div class="hidden lg:flex lg:flex-col mb-4">
 						<div class="flex justify-between">

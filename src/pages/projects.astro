@@ -10,7 +10,7 @@ const projectEntries = await getCollection('projects');
 	<Sidebar />
 	<div class="w-3/4 space-y-10">
 		{
-			projectEntries.toReversed().map(projectEntry => (
+			projectEntries.slice().reverse().map(projectEntry => (
 				<div>
 					<div class="hidden lg:flex lg:flex-col mb-4">
 						<div class="flex justify-between">
